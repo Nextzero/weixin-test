@@ -1,0 +1,29 @@
+{
+    "button": [
+        {
+            "type": "音乐",
+            "name": "a",
+            "key": "V1001_TODAY_MUSIC"
+        },
+        {
+            "type": "click",
+            "name": "b",
+            "key": "V1001_TODAY_MUSIC1"
+        },
+        {
+            "name": "c",
+            "sub_button": [
+                {
+                    "type": "view",
+                    "name": "daxiong",
+                    "url": "http://www.soso.com/"
+                },
+                {
+                    "type": "click",
+                    "name": "laobi",
+                    "key": "V1001_GOOD"
+                }
+            ]
+        }
+    ]
+}
