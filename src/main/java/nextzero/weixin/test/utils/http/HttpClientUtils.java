@@ -1,6 +1,5 @@
-package nextzero.weixin.test.utils;
+package nextzero.weixin.test.utils.http;
 
-import com.alibaba.fastjson.JSON;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.CloseableHttpResponse;

@@ -1,15 +1,15 @@
-package nextzero.weixin.test.handle;
+package nextzero.weixin.test;
 
 import com.alibaba.fastjson.JSON;
-import nextzero.weixin.test.AppInfo;
-import nextzero.weixin.test.utils.HttpClientUtils;
+import nextzero.weixin.test.utils.http.HttpClientUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.util.Map;
 
-public class AccessTokenHandler {
-    private static Logger LOG = LogManager.getLogger(AppInfo.class);
+public class AccessToken {
+    private static Logger LOG = LogManager.getLogger(AccessToken.class);
+
     private static String accessToken;
     private static long expireTime = 0;
 
@@ -23,7 +23,7 @@ public class AccessTokenHandler {
 
     public synchronized static String refreshAccessToken(){
         try {
-            String data = HttpClientUtils.get(String.format("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s", AppInfo.getAppId(), AppInfo.getAppsecret()));
+            String data = HttpClientUtils.get(String.format("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s", WeixinAppServer.APPID, WeixinAppServer.APPSECRET));
             Map<String,Object> json = (Map)JSON.parse(data);
             if(json.containsKey("access_token") && json.containsKey("expires_in")){
                 accessToken = json.get("access_token").toString();

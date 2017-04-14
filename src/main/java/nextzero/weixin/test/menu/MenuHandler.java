@@ -1,15 +1,15 @@
-package nextzero.weixin.test.handle;
+package nextzero.weixin.test.menu;
 
-import nextzero.weixin.test.ErrorMsg;
-import nextzero.weixin.test.utils.HttpClientUtils;
+import nextzero.weixin.test.AccessToken;
+import nextzero.weixin.test.utils.http.HttpClientUtils;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 
 public class MenuHandler {
 
-    public ErrorMsg createMenu() throws Exception {
-        String url = String.format("https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s", AccessTokenHandler.getAccessToken());
+    public String createMenu() throws Exception {
+        String url = String.format("https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s", AccessToken.getAccessToken());
         BufferedReader reader = new BufferedReader(new FileReader("menu-config"));
         try{
             StringBuilder builder = new StringBuilder();
@@ -23,11 +23,5 @@ public class MenuHandler {
             reader.close();
         }
         return null;
-    }
-
-
-    public static void main(String[] args) throws Exception {
-        MenuHandler handler = new MenuHandler();
-        handler.createMenu();
     }
 }

@@ -1,8 +1,8 @@
 {
     "button": [
         {
-            "type": "音乐",
-            "name": "a",
+            "type": "click",
+            "name": "click",
             "key": "V1001_TODAY_MUSIC"
         },
         {
